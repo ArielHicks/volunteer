@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <h1>Welcome To Your Dashboard</h1>
-<br>
-<h2>List of Volunteers</h2>
-<ol>
-<% @users.each do |user| %>
-  <li><%= user.name %>
-    <i><%= user.profession %></i></li>
-<% end %>
-</ol>
-<br>
+  <br>
+  <h2>List of Volunteers</h2>
+  <ol>
+    <% @users.each do |user| %>
+      <li><%= user.name %>
+      <i><%= user.profession %></i></li>
+      <% end %>
+  </ol>
+  <br>
 <h2>Edit My Account</h2>
-<small><a href="/users/edit">Edit My Account</a></small>
-<br>
-<br>
+  <small><a href="/users/<%=@user.id%>/edit">Edit My Account</a></small>
+  <br>
+  <br>
 <h2>Delete My Account</h2>
-<small><a href="/users/delete">Delete My Account</a></small>
-<br>
-<br>
+  <small><a href="/users/delete">Delete My Account</a></small>
+  <br>
+  <br>
 <h2>Log Out</h2>
 <small><a href="/users/logout">Log Out</a></small>

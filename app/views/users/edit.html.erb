@@ -1,2 +1,17 @@
+<!DOCTYPE html>
 <h1>Edit My Account</h1>
 <br>
+<form action="/users/<%=@user.id%>" method="POST">
+  <input type="hidden" name="_method" value="patch"/>
+  <fieldset>
+    <legend>Personal information:</legend><br>
+    Name:<br>
+    <input type="text" name="name" value="<%=@user.name%>"><br><br>
+    Email:<br>
+    <input type="text" name="email" value="<%=@user.email%>"><br><br>
+    Profession:<br>
+    <input type="text" name="profession" value="<%=@user.profession%>"><br><br>
+    <input type="submit" value="Submit"><br><br>
+    <a href="/users/dashboard">Take Me To My Dashboard</a>
+  </fieldset>
+</form>

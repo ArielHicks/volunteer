@@ -5,6 +5,5 @@ require_relative './config/environment'
 # end
 
 use Rack::MethodOverride
-use PostsController
 use UsersController
 run ApplicationController
