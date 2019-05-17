@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-
   # The user can sign-up here!
    get '/signup' do
      erb :"users/new.html"
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
    # This creates the users route
      get '/users' do
        @users = User.all
-       erb :"/users.html"
+       erb :"users.html"
      end
 
     # This post will gather all of the information supplied by the user and save it to the database.
@@ -50,7 +48,7 @@ class UsersController < ApplicationController
         @user = User.find_by(:email => params[:email])
         if @user && @user.authenticate(params[:password])
           session[:email] = @user.email
-          erb :'/users/dashboard.html'
+          erb :'users/dashboard.html'
         else
           redirect '/'
         end
@@ -69,9 +67,4 @@ class UsersController < ApplicationController
       @users.update(updates)
       redirect to('/users/dashboard')
     end
-
-  # Will clear the session and log the user out
-   def logout!
-     session.clear
-   end
 end

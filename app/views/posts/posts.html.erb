@@ -1,0 +1,17 @@
+<h2>Users Posts</h2>
+<% if @posts != nil%>
+<% @posts.each do |post| %>
+  <li><%= post.title %>
+  <i><%= post.content %></i></li>
+  <br>
+  <a href="/posts/<%=post.id%>/edit">Edit This Post</a>
+    <br>
+
+    <form action="/posts/<%=post.id%>/delete" method="POST">
+        <input type="hidden" name="_method" value="delete" /> 
+        <input type="submit" value="Delete"><br><br>
+    </form>
+<br>
+  <% end %>
+  <% end %>
+<a href="/users/dashboard">Take Me To My Dashboard</a>

@@ -22,13 +22,13 @@ class ApplicationController < Sinatra::Base
 
   # Self explanatory -- logs the user out!
   get '/users/logout' do
-    logout!
+    session.clear
     erb :"users/logout.html"
   end
 
   # Routes to the delete page
   get '/users/delete' do
-    erb :"/users/delete.html"
+    erb :"users/delete.html"
   end
 
   # Creates the ability for the user to delete their account
@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
     delete_user = User.find_by(email: session[:email])
     if delete_user.email == params[:email]
     delete_user.destroy
-    erb :"/users/new.html"
+    erb :"users/new.html"
     else
     redirect '/users/delete'
     end

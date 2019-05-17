@@ -1,0 +1,10 @@
+<h1>Delete Form</h1>
+
+  <form action="/posts/<%=@post.id%>" method="POST">
+    <fieldset>
+      Title:<br>
+      <input type="text" name="title" value=""><br><br>
+      <input type="hidden" name="_method" value="delete" /> 
+      <input type="submit" value="Delete"><br><br>
+    </fieldset>
+  </form>

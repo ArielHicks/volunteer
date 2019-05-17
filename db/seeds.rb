@@ -16,3 +16,15 @@ profession: "rockstar"
   name: "Jaz Barnett",
   profession: "Hopkins Employee"
   }])
+
+# Post.create!([{
+# title: "Beautiful"
+# content: "What a beautiful day!"
+# user_id: "1"
+# },
+# {
+#
+# }
+#
+#
+#   }])

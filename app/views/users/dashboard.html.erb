@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <h1>Welcome To Your Dashboard</h1>
   <br>
+
+<!-- List of all Volunteers -->
   <h2>List of Volunteers</h2>
   <ol>
     <% @users.each do |user| %>
@@ -9,13 +11,27 @@
       <% end %>
   </ol>
   <br>
+
+<!-- Posts -->
+<h2>Posts</h2>
+<small><a href="/users/new_posts">Make A New Post</a></small>
+<br>
+<small><a href="/posts/posts">View All Posts</a></small>
+<br>
+<br>
+
+<!-- Edit My individual account -->
 <h2>Edit My Account</h2>
   <small><a href="/users/<%=@user.id%>/edit">Edit My Account</a></small>
   <br>
   <br>
+
+<!-- Delete My Account -->
 <h2>Delete My Account</h2>
   <small><a href="/users/delete">Delete My Account</a></small>
   <br>
   <br>
+
+<!-- Log Out from my account -->
 <h2>Log Out</h2>
 <small><a href="/users/logout">Log Out</a></small>
